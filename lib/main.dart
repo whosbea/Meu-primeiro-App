@@ -10,11 +10,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            foregroundColor: Colors.white, backgroundColor: const Color.fromARGB(255, 156, 77, 144),     // cor do texto
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+        ),
       ),
-      home: const ColorChanger(title: 'Flutter Demo Home Page'),
+      home: const ColorChanger(title: 'Clique para mudar a cor',),
     );
   }
 }
@@ -43,37 +51,33 @@ class _ColorChangerState extends State<ColorChanger> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
-                onPressed:(){
+                onPressed: () {
                   setState(() {
-                    backgroundColor = Colors.blueGrey;
+                    backgroundColor = const Color.fromARGB(255, 80, 96, 104);
                   });
-                }, 
+                },
                 child: const Text("Cinza"),
-                ),
-                const SizedBox(width: 20),
-                
-                ElevatedButton(
-                onPressed:(){
+              ),
+              const SizedBox(width: 20),
+              ElevatedButton(
+                onPressed: () {
                   setState(() {
                     backgroundColor = Colors.deepPurple;
                   });
-                }, 
+                },
                 child: const Text("Roxo"),
-                ),
-
-                const SizedBox(width: 20),
-
-                ElevatedButton(
-                onPressed:(){
+              ),
+              const SizedBox(width: 20),
+              ElevatedButton(
+                onPressed: () {
                   setState(() {
                     backgroundColor = const Color.fromARGB(255, 58, 115, 212);
                   });
-                }, 
+                },
                 child: const Text("Azul"),
-                ),
+              ),
             ],
-
-          ),
+          )
         ),
       ),
     );
