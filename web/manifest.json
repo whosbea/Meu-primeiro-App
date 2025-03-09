@@ -1,6 +1,6 @@
 {
-    "name": "src",
-    "short_name": "src",
+    "name": "color_changer_app",
+    "short_name": "color_changer_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
